@@ -33,7 +33,7 @@ class LinkedList:
     
     def insert_after_item(self, x, data):
         n = self.start_node
-        #print(n.ref) este era o erro model.nod.nod....
+        print(n.ref)
         while n is not None:
             if n.item == x:
                 break
@@ -57,7 +57,7 @@ class LinkedList:
             return
 
         n = self.start_node
-        #print(n.ref) este era o erro model.nod.nod....
+        print(n.ref)
         while n.ref is not None:
             if n.ref.item is not None:
                 if n.ref.item == x:
@@ -88,7 +88,6 @@ class LinkedList:
             new_node.ref = n.ref
             n.ref = new_node
             
-    # alterei o print
     def get_count(self):
         if self.start_node is None:
             return 0
@@ -98,12 +97,9 @@ class LinkedList:
         while n is not None:
             count += 1
             n = n.ref
-        #print(f"O número de elementos são {count}.")
-        # -> Comentario Prof.Inês Almeida: Estes prints são na view
 
         return count
 
-    # alterei o print
     def search_item(self, x):
         if self.start_node is None:
             print("List has no elements")
@@ -112,30 +108,20 @@ class LinkedList:
         while n is not None:
             if n.item == x:
                 print("Item found")
-                #print(f"O país {x} encontra-se na lista.")
-                # -> Comentario Prof.Inês Almeida: Estes prints são na view
-
+                
                 return True
             n = n.ref
         print("item bot found")
-        #print(f"O país {x} não se encontra na lista.")
-        # -> Comentario Prof.Inês Almeida: Estes prints são na view
-
+        
         return False
 
-    # alterei o print
     def delete_at_start(self):
         if self.start_node is None:
             print("The list has no element to delete")
             return
         self.start_node = self.start_node.ref
-        #print(f"O país {self.start_node} foi eliminado da lista.")
-        # -> Comentario Prof.Inês Almeida: Estes prints são na view
-
-        
         
     
-    # alterei o print
     def delete_at_end(self):
         if self.start_node is None:
             print("The list has no elemnet to delete")
@@ -144,10 +130,8 @@ class LinkedList:
         while n.ref.ref is not None:
             n = n.ref
         n.ref = None
-        #print(f"O país {n} foi eliminado da lista.") 
-        # -> Comentario Prof.Inês Almeida: Estes prints são na view
+        
 
-    # alterei o print
     def delete_element_by_value(self, x):
         if self.start_node is None:
             print("The list has no element to delete")
@@ -162,11 +146,10 @@ class LinkedList:
             n = n.ref
         if n.ref is None:
             print("item not found in the list")
-            #print(f"O país {x} não se encontra na lista.")
-
+            
         else:
             n.ref = n.ref.ref
-            #print(f"O país {x} foi eliminado da lista.")
+            
             
     def reverse_linkedlist(self):
         prev = None

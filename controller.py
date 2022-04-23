@@ -21,28 +21,32 @@ def inserir_pais_indice(lista_paises, pais_novo, indice):
     return lista_paises
 
 def verificar_numero_elementos(lista_paises):
-    lista_paises.get_count()
-    return lista_paises
+    count = lista_paises.get_count()
+    return count
 
 def verificar_pais(lista_paises, pais):
-    lista_paises.search_item(pais)
-    return lista_paises
+    if lista_paises.search_item(pais) == True:
+        return True
+    else:
+        return False
 
 def eliminar_primeiro_elemento(lista_paises):
-    #Comentário Prof.Inês Almeida: Aqui o queremos é retornar o elemento eliminado.
-    # A linkedList tem como propriedade start_node, que corresponde ao primeiro elemento da lista.
-    #Por isso, antes de eliminar o elemento guardamos o primeiro elemento numa variável
-    # e no final retornamos apenas o texto por isso fazemos .item
     primeiro_elemento = lista_paises.start_node.item
     lista_paises.delete_at_start()
-    #return lista_paises
-    print(primeiro_elemento)
     return primeiro_elemento
 
 def eliminar_ultimo_elemento(lista_paises):
+    ultimo_elemento = lista_paises.get_last_node()
     lista_paises.delete_at_end()
-    return lista_paises
+    return ultimo_elemento
 
+# verifico, primeiro, se o país pertence à lista, e depois elimino
 def eliminar_determinado_elemento(lista_paises, pais):
-    lista_paises.delete_element_by_value(pais)
-    return lista_paises
+    if lista_paises.search_item(pais) == True:
+        lista_paises.delete_element_by_value(pais)
+        return True
+    else:
+        return False
+    
+     
+    
