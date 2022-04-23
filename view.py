@@ -4,7 +4,7 @@ from models.LinkedList import LinkedList
 lista_paises = LinkedList()
 
 def main():
-    
+
 
     while True:
         controlos = input().split(" ")
@@ -12,16 +12,16 @@ def main():
 
         if controlos[0] == "RPI":
             RPI(controlos, lista_paises)
-            
+
         elif controlos[0] == "RPF":
             RPF(controlos, lista_paises)
-            
+
         elif controlos[0] == "RPDE":
             RPDE(controlos, lista_paises)
-            
+
         elif controlos[0] == "RPAE":
             RPAE(controlos, lista_paises)
-            
+
         elif controlos[0] == "RPII":
             RPII(controlos, lista_paises)
 
@@ -40,7 +40,7 @@ def main():
         elif controlos[0] == "EP":
             EP(controlos, lista_paises)
 
-    
+
 def RPI(controlos, lista_paises):
     pais_novo = controlos[1]
     if controller.inserir_pais_inicio(lista_paises, pais_novo):
@@ -50,7 +50,8 @@ def RPF(controlos, lista_paises):
     pais_novo = controlos[1]
     if controller.inserir_pais_fim(lista_paises, pais_novo):
         lista_paises.traverse_list()
-    
+
+# tem um problema no print, aparece model.nod.nod....
 def RPDE(controlos, lista_paises):
     pais_novo = controlos[1]
     pais_registado = controlos[2]
@@ -72,28 +73,29 @@ def RPII(controlos, lista_paises):
 
 
 def VNE():
-    if controller.verificar_numero_elementos(lista_paises):
-        lista_paises.traverse_list()
+    controller.verificar_numero_elementos(lista_paises)
+        # lista_paises.traverse_list() -> isto faz com que apareça a lista
 
 
 def VP(controlos, lista_paises):
     pais = controlos[1]
-    if controller.verificar_pais(lista_paises, pais):
-        lista_paises.traverse_list()
+    controller.verificar_pais(lista_paises, pais)
+        # lista_paises.traverse_list() -> isto faz com que apareça a lista
 
 # tem um problema no print, aparece model.nod.nod....
 def EPE(lista_paises):
-    if controller.eliminar_primeiro_elemento(lista_paises):
-        lista_paises.traverse_list()
+    controller.eliminar_primeiro_elemento(lista_paises)
+        # lista_paises.traverse_list() -> isto faz com que apareça a lista
 
 # tem um problema no print, aparece model.nod.nod....
 def EUE(lista_paises):
-    if controller.eliminar_ultimo_elemento(lista_paises):
-        lista_paises.traverse_list()
+    controller.eliminar_ultimo_elemento(lista_paises)
+        # lista_paises.traverse_list() -> isto faz com que apareça a lista
 
+# tem um problema no print, se escolhermos o elemento da posiçao 1, nao emite o print formatado
 def EP(controlos, lista_paises):
     pais = controlos[1]
-    if controller.eliminar_determinado_elemento(lista_paises, pais):
-        lista_paises.traverse_list()
-
-
+    controller.eliminar_determinado_elemento(lista_paises, pais)
+        # lista_paises.traverse_list() -> isto faz com que apareça a lista
+        
+    
