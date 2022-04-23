@@ -98,7 +98,9 @@ class LinkedList:
         while n is not None:
             count += 1
             n = n.ref
-        print(f"O número de elementos são {count}.")
+        #print(f"O número de elementos são {count}.")
+        # -> Comentario Prof.Inês Almeida: Estes prints são na view
+
         return count
 
     # alterei o print
@@ -109,12 +111,16 @@ class LinkedList:
         n = self.start_node
         while n is not None:
             if n.item == x:
-                # print("Item found")
-                print(f"O país {x} encontra-se na lista.")
+                print("Item found")
+                #print(f"O país {x} encontra-se na lista.")
+                # -> Comentario Prof.Inês Almeida: Estes prints são na view
+
                 return True
             n = n.ref
-        # print("item bot found")
-        print(f"O país {x} não se encontra na lista.")
+        print("item bot found")
+        #print(f"O país {x} não se encontra na lista.")
+        # -> Comentario Prof.Inês Almeida: Estes prints são na view
+
         return False
 
     # alterei o print
@@ -123,7 +129,10 @@ class LinkedList:
             print("The list has no element to delete")
             return
         self.start_node = self.start_node.ref
-        print(f"O país {self.start_node} foi eliminado da lista.")
+        #print(f"O país {self.start_node} foi eliminado da lista.")
+        # -> Comentario Prof.Inês Almeida: Estes prints são na view
+
+        
         
     
     # alterei o print
@@ -135,7 +144,8 @@ class LinkedList:
         while n.ref.ref is not None:
             n = n.ref
         n.ref = None
-        print(f"O país {n} foi eliminado da lista.")
+        #print(f"O país {n} foi eliminado da lista.") 
+        # -> Comentario Prof.Inês Almeida: Estes prints são na view
 
     # alterei o print
     def delete_element_by_value(self, x):
@@ -151,12 +161,12 @@ class LinkedList:
                 break
             n = n.ref
         if n.ref is None:
-            # print("item not found in the list")
-            print(f"O país {x} não se encontra na lista.")
+            print("item not found in the list")
+            #print(f"O país {x} não se encontra na lista.")
 
         else:
             n.ref = n.ref.ref
-            print(f"O país {x} foi eliminado da lista.")
+            #print(f"O país {x} foi eliminado da lista.")
             
     def reverse_linkedlist(self):
         prev = None

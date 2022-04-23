@@ -29,8 +29,15 @@ def verificar_pais(lista_paises, pais):
     return lista_paises
 
 def eliminar_primeiro_elemento(lista_paises):
+    #Comentário Prof.Inês Almeida: Aqui o queremos é retornar o elemento eliminado.
+    # A linkedList tem como propriedade start_node, que corresponde ao primeiro elemento da lista.
+    #Por isso, antes de eliminar o elemento guardamos o primeiro elemento numa variável
+    # e no final retornamos apenas o texto por isso fazemos .item
+    primeiro_elemento = lista_paises.start_node.item
     lista_paises.delete_at_start()
-    return lista_paises
+    #return lista_paises
+    print(primeiro_elemento)
+    return primeiro_elemento
 
 def eliminar_ultimo_elemento(lista_paises):
     lista_paises.delete_at_end()

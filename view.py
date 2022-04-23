@@ -84,12 +84,15 @@ def VP(controlos, lista_paises):
 
 # tem um problema no print, aparece model.nod.nod....
 def EPE(lista_paises):
-    controller.eliminar_primeiro_elemento(lista_paises)
+    elemento_eliminado = controller.eliminar_primeiro_elemento(lista_paises)
+    #Estes prints são aqui e não na LinkedList, as classes que vos dei não são para a alterar.
+    print(f"O país {elemento_eliminado} não se encontra na lista.") 
         # lista_paises.traverse_list() -> isto faz com que apareça a lista
 
 # tem um problema no print, aparece model.nod.nod....
 def EUE(lista_paises):
     controller.eliminar_ultimo_elemento(lista_paises)
+    
         # lista_paises.traverse_list() -> isto faz com que apareça a lista
 
 # tem um problema no print, se escolhermos o elemento da posiçao 1, nao emite o print formatado
